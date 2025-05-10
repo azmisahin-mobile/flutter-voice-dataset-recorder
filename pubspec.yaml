@@ -1,0 +1,48 @@
+name: dataset_voice_recorder
+description: "Dataset Voice Recorder"
+publish_to: 'none'
+version: 0.1.0+1 # Versiyon numarasını artırdım
+
+environment:
+  # Bu paket versiyonları genellikle daha güncel SDK versiyonları gerektirir.
+  # flutter upgrade komutunu çalıştırıp SDK'nızı güncellediğinizden emin olun.
+  sdk: ">=3.0.0 <4.0.0" # Minimum SDK versiyonunu güncel paketlere uyumlu hale getirdim.
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: 1.0.2
+
+  # Dosya seçici (Belirtilen versiyon)
+  file_picker: 10.1.2
+
+  # İzinleri yönetmek için (Belirtilen versiyon)
+  permission_handler: ^11.3.0
+
+  # Ses kaydı için (Belirtilen versiyon, WAV desteği var)
+  record: 6.0.0
+
+  # Ses oynatma için (Belirtilen versiyon)
+  audioplayers: 6.0.0
+
+  # Platforma özgü dizin yollarını almak için
+  path_provider: ^2.0.12 # audioplayers 6.0.0'ın gerektirdiği minimum versiyon veya ^2.1.5 önerisi
+
+  # Dosya yolu birleştirme ve işleme için (İyi bir pratiktir)
+  path: 1.9.1 # SDK'nın gerektirdiği tam versiyon
+
+
+  # Uygulama durumunu kaydetmek için (Örn: en son kalınan cümle indexi)
+  shared_preferences: 2.2.1
+  csv: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: 3.0.0 # Daha katı lint kuralları
+
+flutter:
+  uses-material-design: true

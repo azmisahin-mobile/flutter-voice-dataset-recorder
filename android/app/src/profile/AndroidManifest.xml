@@ -1,0 +1,27 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Ses kaydı için -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!-- Depolama için (Modern Android'de getApplicationDocumentsDirectory() genellikle bu izni gerektirmez, ancak file_picker için gerekebilir veya eski Android versiyonları için) -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/> <!-- Android 11+ için tüm dosyalara erişim gerekirse (genelde gerekmez) -->
+
+    <application
+        android:label="dataset_voice_recorder"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher"
+        android:requestLegacyExternalStorage="true"> <!-- Eski depolama modelini desteklemesi için (Android 10 ve altı) -->
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- ... intent-filter kısmı burada kalır ... -->
+        </activity>
+        <!-- ... Diğer kısımlar ... -->
+    </application>
+</manifest>
